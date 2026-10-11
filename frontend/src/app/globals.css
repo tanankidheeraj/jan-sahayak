@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --foreground-rgb: 18, 28, 42;
+  --background-start-rgb: 248, 249, 255;
+  --background-end-rgb: 248, 249, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #f8f9ff;
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+/* Indic Script font mapping and increased line-height to 1.6 */
+html[lang="hi"], html[lang="mr"], [data-lang="hi"], [data-lang="mr"] {
+  font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif !important;
+  line-height: 1.6 !important;
+}
+
+html[lang="te"], [data-lang="te"] {
+  font-family: 'Noto Sans Telugu', 'Noto Sans', sans-serif !important;
+  line-height: 1.65 !important;
+}
+
+html[lang="ta"], [data-lang="ta"] {
+  font-family: 'Noto Sans Tamil', 'Noto Sans', sans-serif !important;
+  line-height: 1.65 !important;
+}
+
+html[lang="bn"], [data-lang="bn"] {
+  font-family: 'Noto Sans Bengali', 'Noto Sans', sans-serif !important;
+  line-height: 1.6 !important;
+}
+
+html[lang="en"], [data-lang="en"] {
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+}
+
+/* Ensure buttons and headers don't overflow with long Indic words */
+button, a, .truncate-indic {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+h1, h2, h3, h4, .font-headline {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Bengali', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility: Large Text Mode */
+body.large-text {
+  font-size: 1.18rem !important;
+  line-height: 1.75 !important;
+}
+
+body.large-text h1 {
+  font-size: 2.6rem !important;
+}
+
+body.large-text h2 {
+  font-size: 2.1rem !important;
+}
+
+body.large-text h3 {
+  font-size: 1.6rem !important;
+}
+
+/* Accessibility: High Contrast Mode (WCAG AAA) */
+body.high-contrast {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast * {
+  border-color: #ffff00 !important;
+}
+
+body.high-contrast .bg-white,
+body.high-contrast .bg-surface,
+body.high-contrast .bg-surface-container,
+body.high-contrast .bg-surface-container-low,
+body.high-contrast .bg-surface-container-lowest {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+/* Leaflet map container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
